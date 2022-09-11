@@ -2,7 +2,7 @@
  * Aplica a cor #BECCC3 no background do body da página
  */
 function background(){
-
+    document.body.style.backgroundColor = "#BECCC3";
     /**
      * Tarefa/Issue  1
      *
