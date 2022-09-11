@@ -18,7 +18,11 @@ function background(){
  * na div id='result'
  */
 function show(){
-
+ const name = document.getElementById('fname').value;
+ const sobre = document.getElementById('lname').value;
+ document.getElementById('result').innerHTML=name +(" ") +sobre
+ 
+ /**
      /**
       * Issue  2
       *
@@ -34,7 +38,15 @@ function show(){
 function search(){
 
     var data = [{name: "Rodrigo"}, {name: "Ricardo"}, {name: "Fabio"}, {name: "Alex"}, {name: "Sílvia"}];
-
+    let searchName = document.getElementById('name').value;
+    let searchDiv = document.getElementById('search');
+    let t = '';
+    data.forEach(person => {
+         if(person.name.toLowerCase().substr(0, searchName.length).indexOf(`${searchName.toLowerCase()}`) > -1){
+            t += `<div>${person.name}</div>`;
+        }
+    });
+    document.getElementById('search').innerHTML = t;
     /**
      * Issue 3
      *
